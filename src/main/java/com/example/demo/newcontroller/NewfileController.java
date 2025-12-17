@@ -19,12 +19,12 @@ public class NewfileController {
     @Autowired
     NewfileServiceImpl src;
     @PostMapping("/addStudent")
-    public NewFileEntity addstudent(@RequestBody NewFileEntity student){
+    public NewFileEntity savedata(@RequestBody NewFileEntity student){
     return src.saveStudentData(student);
     }
     
     @GetMapping("/getStudent")
-    public List<NewFileEntity> getallstudents(){
+    public List<NewFileEntity> getidval(){
         return src.retrieveAllStudents();
     }
     
