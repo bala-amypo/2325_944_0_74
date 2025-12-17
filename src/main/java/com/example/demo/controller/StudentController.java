@@ -15,7 +15,7 @@
 // import com.example.demo.service.Studentservice;
 
 // @RestController
-// public class  Studentcontroller {
+// public class  StudentController {
 //     @Autowired
 //     Studentservice src;
     
