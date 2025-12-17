@@ -7,17 +7,17 @@ import com.example.demo.newservice.NewfileService;
 @Override
 public class NewfileServiceImpl implements NewfileService{
     private final NewfileRepo rep;
-    Public NewfileService(NewfileRepo rep){
-        
+    public NewfileService(NewfileRepo rep){
+        this.rep=rep;
     }
 @Override
 public NewfileEntity savedata(NewfileEntity newfile){
-
+     return rep.save(newfile);
 }
 
 @Override
 public NewfileEntity getidval(long id){
-
+      return rep.get()
 }
 @Override
 public List<NewfileEntity>getall(){
