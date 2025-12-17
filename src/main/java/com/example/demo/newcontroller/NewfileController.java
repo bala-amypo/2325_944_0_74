@@ -19,27 +19,27 @@ public class NewfileController {
     @Autowired
     NewfileServiceImpl src;
     @PostMapping("/addStudent")
-    public NewFileEntity savedata(@RequestBody NewFileEntity student){
-    return src.saveStudentData(student);
+    public NewFileEntity addstudent(@RequestBody NewFileEntity student){
+    return src.savedata(student);
     }
     
     @GetMapping("/getStudent")
-    public List<NewFileEntity> getidval(){
-        return src.retrieveAllStudents();
+    public List<NewFileEntity> getallstudents(){
+        return src.getidval();
     }
     
     @GetMapping("/getStudentById/{id}")
     public NewFileEntity getIdVal(@PathVariable int id){
-        return src.retrieveStudentData(id);
+        return src.getall(id);
     }
     
     @PutMapping("/updateStudentDate/{id}")
     public NewFileEntity updateStudentData(@PathVariable int id, @RequestBody NewFileEntity student){
-        return src.updateStudentData(id,student);
+        return src.update(id,student);
     }
 
     @DeleteMapping("/deleteStudents/{id}")
-    public NewFileEntity deleteStudentData(@PathVariable int id){
-       return  src.deleteStudentData(id);
+    public void deleteStudentData(@PathVariable int id){
+         src.delete(id);
     }
 }
