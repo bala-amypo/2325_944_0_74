@@ -1,3 +1,5 @@
-package.com.example.demo.newservice;
+package.com.example.demo.newserviceimpl;
 
-public class New
+public class NewfileServiceImpl implements NewfileService{
+
+}
