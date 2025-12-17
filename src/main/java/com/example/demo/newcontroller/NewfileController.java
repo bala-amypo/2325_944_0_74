@@ -24,22 +24,22 @@ public class NewfileController {
     }
     
     @GetMapping("/getStudent")
-    public List<NewfileEntity> getallstudents(){
+    public List<NewFileEntity> getallstudents(){
         return src.retrieveAllStudents();
     }
     
     @GetMapping("/getStudentById/{id}")
-    public Studententity getIdVal(@PathVariable int id){
+    public NewFileEntity getIdVal(@PathVariable int id){
         return src.retrieveStudentData(id);
     }
     
     @PutMapping("/updateStudentDate/{id}")
-    public Studententity updateStudentData(@PathVariable int id, @RequestBody Studententity student){
+    public NewFileEntity updateStudentData(@PathVariable int id, @RequestBody NewFileEntity student){
         return src.updateStudentData(id,student);
     }
 
     @DeleteMapping("/deleteStudents/{id}")
-    public Studententity deleteStudentData(@PathVariable int id){
+    public NewFileEntity deleteStudentData(@PathVariable int id){
        return  src.deleteStudentData(id);
     }
 }
