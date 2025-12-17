@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.Studententity;
+import com.example.demo.entity.Student;
 import com.example.demo.service.Studentservice;
 
 @RestController
@@ -20,19 +20,19 @@ public class  StudentController {
     Studentservice src;
     
     @PostMapping("/post")
-    public Studententity postdata(@RequestBody Studententity st){
+    public Student postdata(@RequestBody Student st){
         return src.savedata(st);
     }
       @GetMapping("/retrive")
-    public List<Studententity> getdata(){
+    public List<Student> getdata(){
         return src.retdata();
     }
     @GetMapping("/getid/{id}")
-    public Studententity getIdVal(@PathVariable int id){
+    public Student getIdVal(@PathVariable int id){
         return src.id(id);     
     }
     @PutMapping("/update/{id}")
-    public Studententity update(@PathVariable int id,@RequestBody Studententity st){
+    public Student update(@PathVariable int id,@RequestBody Student st){
         return src.update(id,st);
     }
     @DeleteMapping("/deleted/{id}")
