@@ -24,9 +24,16 @@ public class NewfileServiceImpl implements NewfileService{
                return rep.findALL();
       }
       @Override
-       public NewfileEntity update(long id,NewfileEntitynewfile){
-                                            
-            }
+      public NewFileEntity update(Long id,NewFileEntity st){
+        NewFileEntity exist = repo.findById(id).orElse(null);
+
+        if(exist!=null){
+            exist.setName(st.getName());
+            exist.setEmail(st.getEmail());
+            return repo.save(exist);
+        }
+        return null;
+    }
      @Override
       public void delete(long id){
          return rep.deletebyId();
